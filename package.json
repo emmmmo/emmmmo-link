@@ -1,0 +1,19 @@
+{
+  "name": "emmmmo-link",
+  "version": "1.0.0",
+  "description": "Emmmmo Link WXApp.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .js,jsx,ts,tsx config plugins",
+    "lint:fix": "eslint --ext .js,jsx,ts,tsx config plugins --fix"
+  },
+  "author": "emmmmo",
+  "license": "MIT",
+  "devDependencies": {
+    "@my/eslint-config-prettier": "file:./plugins/eslint/prettier",
+    "@my/eslint-config-standard": "file:./plugins/eslint/standard",
+    "eslint": "^5.16.0",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {}
+}
