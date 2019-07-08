@@ -1,0 +1,5 @@
+<!--components/base/Page/index.wxml-->
+<view>
+  <text>{{inner}}</text>
+  <slot id="slot"></slot>
+</view>
