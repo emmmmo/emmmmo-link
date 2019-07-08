@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --ext .js,jsx,ts,tsx config plugins",
     "lint:fix": "eslint --ext .js,jsx,ts,tsx config plugins --fix",
-    "dev": "./node_modules/.bin/gulp watch",
+    "dev:client": "./node_modules/.bin/gulp watch",
     "compile": "./node_modules/typescript/bin/tsc",
     "tsc": "node ./node_modules/typescript/lib/tsc.js"
   },
