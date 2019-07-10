@@ -16,7 +16,7 @@
 
 一个完整的 commit message 应该包含以下三部分：type、subject
 
-格式：<type> subject
+> 格式：<type> subject
 
 type | 备注
 ---|---
