@@ -1,5 +1,5 @@
 # emmmmo-link
-
+[![Build Status](https://travis-ci.org/emmmmo/emmmmo-link.svg?branch=master)](https://travis-ci.org/emmmmo/emmmmo-link)
 ## commit-message
 
 > commit message 规范示例：`feat 提交信息`
