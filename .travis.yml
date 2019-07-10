@@ -2,10 +2,4 @@ language: JAVASCRIPT
 cache:
   directories:
     - node_modules
-before_script:
-  - sudo apt-get update
-  - sudo apt-get install yarn -y
-install:
-  - yarn
-
 script: true
