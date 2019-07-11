@@ -1,5 +1,5 @@
 const {WeChat, ...app} = getApp()
-class Page extends WeChat.BasePage {
+class Pages extends WeChat.BasePage {
   constructor() {
     super()
     this.setDefaultData({
@@ -33,4 +33,4 @@ class Page extends WeChat.BasePage {
   }
 }
 
-WeChat.createPage(Page);
+WeChat.createPage(Pages);

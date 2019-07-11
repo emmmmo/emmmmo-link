@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "module": "CommonJS",
@@ -18,16 +19,11 @@
     "removeComments": true,
     "pretty": true,
     "strictPropertyInitialization": true,
-    "typeRoots": [
-      "./typings"
-    ]
+    "typeRoots": ["./typings"],
+    "paths": {
+      "@/*": ["./miniprogram/*"]
+    }
   },
-  "include": [
-    "./miniprogram/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "miniprogram_dist",
-    "**/*.spec.ts"
-  ]
+  "include": ["./miniprogram/**/*.ts"],
+  "exclude": ["node_modules", "miniprogram_dist", "**/*.spec.ts"]
 }

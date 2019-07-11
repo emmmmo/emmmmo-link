@@ -1,4 +1,4 @@
-import WeChat from '../../../lib/WeChat'
+import WeChat from '@/lib/WeChat'
 class Component extends WeChat.BasePage {
   constructor() {
     super()

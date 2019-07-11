@@ -1,3 +1,3 @@
 export default {
-  getUserInfo: {method: 'get', url: '121231231231321312'}
+  getUserInfo: { method: 'get', url: '121231231231321312' },
 }

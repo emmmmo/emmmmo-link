@@ -1,4 +1,4 @@
-import WeChat from './lib/WeChat'
+import WeChat from '@/lib/WeChat'
 export interface IMyApp {
   userInfoReadyCallback?(res: wx.UserInfo): void
   globalData: {

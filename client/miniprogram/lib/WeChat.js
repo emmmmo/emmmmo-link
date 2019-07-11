@@ -1,58 +1,37 @@
-import BasePage from './BasePage'
-
-// 小程序全局对象
-const WeChat = {};
-// 注入的Page方法
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var BasePage_1 = require("./BasePage");
+var WeChat = {};
 WeChat.Page = Page;
-// 注入的Component方法
 WeChat.Component = Component;
-// 注入基础页面类
-WeChat.BasePage = BasePage
-
-/**
- * 注册页面
- */
+WeChat.BasePage = BasePage_1.default;
 WeChat.createPage = function (PageClass) {
-  const page = newInstance(PageClass)
-  WeChat.Page(page);
+    var page = newInstance(PageClass);
+    WeChat.Page(page);
 };
-
-/**
- * 初始化组件
- */
 WeChat.createComponent = function (ComponentClass) {
-  const component = newInstance(ComponentClass)
-  console.log(component)
-  WeChat.Component(component);
+    var component = newInstance(ComponentClass);
+    console.log(component);
+    WeChat.Component(component);
 };
-
-/**
- * 实例化页面类，同时将所有属性拷贝到新对象中
- * @param {*} Class 
- */
 function newInstance(wxClass) {
-  const obj = new wxClass()
-  const attrs = []
-  const newObj = {}
-  loopAtrr(obj, attrs)
-  attrs.reverse()
-  attrs.forEach(item => Object.assign(newObj, item))
-  return newObj
+    var obj = new wxClass();
+    var attrs = [];
+    var newObj = {};
+    loopAtrr(obj, attrs);
+    attrs.reverse();
+    attrs.forEach(function (item) { return Object.assign(newObj, item); });
+    return newObj;
 }
-
-/**
- * 递归获取对象自身上所有属性
- * @param {*} obj 
- * @param {*} attrs 
- */
 function loopAtrr(obj, attrs) {
-  const excludeAttr = ['constructor']
-  const pureObj = {}
-  Object.getOwnPropertyNames(obj).forEach(key => {
-    if (!excludeAttr.includes(key)) pureObj[key] = obj[key]
-  })
-  attrs.push(pureObj)
-  obj.constructor !== BasePage && loopAtrr(obj.__proto__, attrs)
+    var excludeAttr = ['constructor'];
+    var pureObj = {};
+    Object.getOwnPropertyNames(obj).forEach(function (key) {
+        if (!excludeAttr.includes(key))
+            pureObj[key] = obj[key];
+    });
+    attrs.push(pureObj);
+    obj.constructor !== BasePage_1.default && loopAtrr(obj.__proto__, attrs);
 }
-
-export default WeChat;
+exports.default = WeChat;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiV2VDaGF0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiV2VDaGF0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdUNBQWlDO0FBR2pDLElBQU0sTUFBTSxHQUFHLEVBQUUsQ0FBQTtBQUVqQixNQUFNLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQTtBQUVsQixNQUFNLENBQUMsU0FBUyxHQUFHLFNBQVMsQ0FBQTtBQUU1QixNQUFNLENBQUMsUUFBUSxHQUFHLGtCQUFRLENBQUE7QUFLMUIsTUFBTSxDQUFDLFVBQVUsR0FBRyxVQUFTLFNBQVM7SUFDcEMsSUFBTSxJQUFJLEdBQUcsV0FBVyxDQUFDLFNBQVMsQ0FBQyxDQUFBO0lBQ25DLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUE7QUFDbkIsQ0FBQyxDQUFBO0FBS0QsTUFBTSxDQUFDLGVBQWUsR0FBRyxVQUFTLGNBQWM7SUFDOUMsSUFBTSxTQUFTLEdBQUcsV0FBVyxDQUFDLGNBQWMsQ0FBQyxDQUFBO0lBQzdDLE9BQU8sQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLENBQUE7SUFDdEIsTUFBTSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsQ0FBQTtBQUM3QixDQUFDLENBQUE7QUFNRCxTQUFTLFdBQVcsQ0FBQyxPQUFPO0lBQzFCLElBQU0sR0FBRyxHQUFHLElBQUksT0FBTyxFQUFFLENBQUE7SUFDekIsSUFBTSxLQUFLLEdBQUcsRUFBRSxDQUFBO0lBQ2hCLElBQU0sTUFBTSxHQUFHLEVBQUUsQ0FBQTtJQUNqQixRQUFRLENBQUMsR0FBRyxFQUFFLEtBQUssQ0FBQyxDQUFBO0lBQ3BCLEtBQUssQ0FBQyxPQUFPLEVBQUUsQ0FBQTtJQUNmLEtBQUssQ0FBQyxPQUFPLENBQUMsVUFBQSxJQUFJLElBQUksT0FBQSxNQUFNLENBQUMsTUFBTSxDQUFDLE1BQU0sRUFBRSxJQUFJLENBQUMsRUFBM0IsQ0FBMkIsQ0FBQyxDQUFBO0lBQ2xELE9BQU8sTUFBTSxDQUFBO0FBQ2YsQ0FBQztBQU9ELFNBQVMsUUFBUSxDQUFDLEdBQUcsRUFBRSxLQUFLO0lBQzFCLElBQU0sV0FBVyxHQUFHLENBQUMsYUFBYSxDQUFDLENBQUE7SUFDbkMsSUFBTSxPQUFPLEdBQUcsRUFBRSxDQUFBO0lBQ2xCLE1BQU0sQ0FBQyxtQkFBbUIsQ0FBQyxHQUFHLENBQUMsQ0FBQyxPQUFPLENBQUMsVUFBQSxHQUFHO1FBQ3pDLElBQUksQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDLEdBQUcsQ0FBQztZQUFFLE9BQU8sQ0FBQyxHQUFHLENBQUMsR0FBRyxHQUFHLENBQUMsR0FBRyxDQUFDLENBQUE7SUFDekQsQ0FBQyxDQUFDLENBQUE7SUFDRixLQUFLLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFBO0lBQ25CLEdBQUcsQ0FBQyxXQUFXLEtBQUssa0JBQVEsSUFBSSxRQUFRLENBQUMsR0FBRyxDQUFDLFNBQVMsRUFBRSxLQUFLLENBQUMsQ0FBQTtBQUNoRSxDQUFDO0FBRUQsa0JBQWUsTUFBTSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEJhc2VQYWdlIGZyb20gJy4vQmFzZVBhZ2UnXG5cbi8vIOWwj+eoi+W6j+WFqOWxgOWvueixoVxuY29uc3QgV2VDaGF0ID0ge31cbi8vIOazqOWFpeeahFBhZ2Xmlrnms5VcbldlQ2hhdC5QYWdlID0gUGFnZVxuLy8g5rOo5YWl55qEQ29tcG9uZW505pa55rOVXG5XZUNoYXQuQ29tcG9uZW50ID0gQ29tcG9uZW50XG4vLyDms6jlhaXln7rnoYDpobXpnaLnsbtcbldlQ2hhdC5CYXNlUGFnZSA9IEJhc2VQYWdlXG5cbi8qKlxuICog5rOo5YaM6aG16Z2iXG4gKi9cbldlQ2hhdC5jcmVhdGVQYWdlID0gZnVuY3Rpb24oUGFnZUNsYXNzKSB7XG4gIGNvbnN0IHBhZ2UgPSBuZXdJbnN0YW5jZShQYWdlQ2xhc3MpXG4gIFdlQ2hhdC5QYWdlKHBhZ2UpXG59XG5cbi8qKlxuICog5Yid5aeL5YyW57uE5Lu2XG4gKi9cbldlQ2hhdC5jcmVhdGVDb21wb25lbnQgPSBmdW5jdGlvbihDb21wb25lbnRDbGFzcykge1xuICBjb25zdCBjb21wb25lbnQgPSBuZXdJbnN0YW5jZShDb21wb25lbnRDbGFzcylcbiAgY29uc29sZS5sb2coY29tcG9uZW50KVxuICBXZUNoYXQuQ29tcG9uZW50KGNvbXBvbmVudClcbn1cblxuLyoqXG4gKiDlrp7kvovljJbpobXpnaLnsbvvvIzlkIzml7blsIbmiYDmnInlsZ7mgKfmi7fotJ3liLDmlrDlr7nosaHkuK1cbiAqIEBwYXJhbSB7Kn0gQ2xhc3NcbiAqL1xuZnVuY3Rpb24gbmV3SW5zdGFuY2Uod3hDbGFzcykge1xuICBjb25zdCBvYmogPSBuZXcgd3hDbGFzcygpXG4gIGNvbnN0IGF0dHJzID0gW11cbiAgY29uc3QgbmV3T2JqID0ge31cbiAgbG9vcEF0cnIob2JqLCBhdHRycylcbiAgYXR0cnMucmV2ZXJzZSgpXG4gIGF0dHJzLmZvckVhY2goaXRlbSA9PiBPYmplY3QuYXNzaWduKG5ld09iaiwgaXRlbSkpXG4gIHJldHVybiBuZXdPYmpcbn1cblxuLyoqXG4gKiDpgJLlvZLojrflj5blr7nosaHoh6rouqvkuIrmiYDmnInlsZ7mgKdcbiAqIEBwYXJhbSB7Kn0gb2JqXG4gKiBAcGFyYW0geyp9IGF0dHJzXG4gKi9cbmZ1bmN0aW9uIGxvb3BBdHJyKG9iaiwgYXR0cnMpIHtcbiAgY29uc3QgZXhjbHVkZUF0dHIgPSBbJ2NvbnN0cnVjdG9yJ11cbiAgY29uc3QgcHVyZU9iaiA9IHt9XG4gIE9iamVjdC5nZXRPd25Qcm9wZXJ0eU5hbWVzKG9iaikuZm9yRWFjaChrZXkgPT4ge1xuICAgIGlmICghZXhjbHVkZUF0dHIuaW5jbHVkZXMoa2V5KSkgcHVyZU9ialtrZXldID0gb2JqW2tleV1cbiAgfSlcbiAgYXR0cnMucHVzaChwdXJlT2JqKVxuICBvYmouY29uc3RydWN0b3IgIT09IEJhc2VQYWdlICYmIGxvb3BBdHJyKG9iai5fX3Byb3RvX18sIGF0dHJzKVxufVxuXG5leHBvcnQgZGVmYXVsdCBXZUNoYXRcbiJdfQ==
