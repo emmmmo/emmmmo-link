@@ -9,5 +9,9 @@ module.exports = {
   ],
   rules: {
     'no-unused-vars': 'warn'
+  },
+  globals: {
+    Page: true,
+    wx: true
   }
 }
