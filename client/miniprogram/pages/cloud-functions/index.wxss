@@ -1,0 +1,13 @@
+.index {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.index-btn {
+  background: #28b7a3;
+  color: #fff;
+  text-align: center;
+  line-height: 98rpx;
+  border-radius: 4rpx;
+  margin: 20rpx 30rpx;
+}

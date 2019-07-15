@@ -1,0 +1,12 @@
+<view class="index-btn"
+      bindtap="getActivityList">
+  测试 getActivityList
+</view>
+<view class="index-btn"
+      bindtap="postActivity">
+  测试 创建活动
+</view>
+
+<view>
+  执行结果 {{ text }}
+</view>
