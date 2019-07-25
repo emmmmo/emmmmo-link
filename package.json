@@ -6,10 +6,9 @@
   "scripts": {
     "lint": "eslint --ext .js,jsx,ts,tsx config plugins",
     "lint:fix": "eslint --ext .js,jsx,ts,tsx config plugins --fix",
-    "dev:client": "./node_modules/.bin/gulp watch",
+    "dev:client": "webpack --mode development --watch --config ./build/webpack.config.js",
     "compile": "./node_modules/typescript/bin/tsc",
-    "tsc": "node ./node_modules/typescript/lib/tsc.js",
-    "dev": "webpack --mode development --watch --config ./build/webpack.config.js"
+    "tsc": "node ./node_modules/typescript/lib/tsc.js"
   },
   "author": "emmmmo",
   "license": "MIT",
