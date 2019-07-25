@@ -1,19 +1,20 @@
 import api from '../api/index'
-
-export default class BasePage {
+interface defaultPage extends Page.PageInstance{
+  [propName: string]: any;
+}
+export default class BasePage implements defaultPage {
   constructor() {
     this.api = api
     this.setDefaultData({
-      abs: '111'
+      abs: '111',
     })
   }
-  data = {}
   showErrorMsg(title) {
     wx.showModal({})
   }
   /**
    * 设置初始 data
-   * @param {*} data 
+   * @param {*} data
    */
   setDefaultData(data) {
     this.data = Object.assign({}, this.data, data)

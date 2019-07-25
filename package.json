@@ -8,20 +8,24 @@
     "lint:fix": "eslint --ext .js,jsx,ts,tsx config plugins --fix",
     "dev:client": "./node_modules/.bin/gulp watch",
     "compile": "./node_modules/typescript/bin/tsc",
-    "tsc": "node ./node_modules/typescript/lib/tsc.js"
+    "tsc": "node ./node_modules/typescript/lib/tsc.js",
+    "dev": "webpack --mode development --watch --config ./build/webpack.config.js"
   },
   "author": "emmmmo",
   "license": "MIT",
   "devDependencies": {
     "@my/eslint-config-prettier": "file:./plugins/eslint/prettier",
     "@my/eslint-config-standard": "file:./plugins/eslint/standard",
+    "@my/weapp-webpack": "file:plugins/webpack",
     "eslint": "^5.16.0",
     "gulp": "4.0.2",
     "gulp-shell": "0.7.1",
     "gulp-watch": "5.0.1",
     "husky": "1.2.1",
     "prettier": "^1.18.2",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {},
   "husky": {
